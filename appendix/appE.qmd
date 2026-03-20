@@ -1,0 +1,338 @@
+# 附录 E：我想做更好看的版式 {#sec-appE .unnumbered}
+
+---
+
+## E-1 双栏布局 {#sec-appE-1 .unnumbered}
+
+**我想实现什么：** 把幻灯片内容分成左右两栏。
+
+**简洁写法：**
+
+```html
+<style scoped>
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; }
+</style>
+
+<div class="cols">
+<div>
+
+左栏内容
+
+</div>
+<div>
+
+右栏内容
+
+</div>
+</div>
+```
+
+**推荐写法（更多配置选项）：**
+
+```html
+<style scoped>
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* 左右各占 50% */
+  gap: 1.5em;                       /* 两栏间距 */
+  align-items: start;               /* 顶部对齐，改成 center 可以垂直居中 */
+}
+</style>
+
+<div class="cols">
+<div>
+
+**左栏标题**
+
+- 要点一
+- 要点二
+- 要点三
+
+</div>
+<div>
+
+**右栏标题**
+
+- 要点四
+- 要点五
+
+![width:90%](./Fig/chart.png)
+
+</div>
+</div>
+```
+
+**不等宽变体：**
+
+```html
+/* 左 40% 右 60% */
+grid-template-columns: 2fr 3fr;
+
+/* 左 60% 右 40% */
+grid-template-columns: 3fr 2fr;
+
+/* 左 1/3 右 2/3 */
+grid-template-columns: 1fr 2fr;
+```
+
+**三栏布局：**
+
+```html
+<style scoped>
+.cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1em; }
+</style>
+
+<div class="cols">
+<div>第一栏</div>
+<div>第二栏</div>
+<div>第三栏</div>
+</div>
+```
+
+**常见问题：**
+
+- 内容溢出栏外 → 检查是否给 `.cols > div` 加了 `overflow: hidden`
+- 两栏高度不一致 → 加 `align-items: stretch` 让两栏等高
+
+::: {.callout-tip}
+### 提示词
+
+帮我生成一张 Marp 双栏对比幻灯片，左栏介绍 OLS 方法（3-4 个要点），右栏介绍 IV 方法（3-4 个要点），两栏宽度相同，标题"方法比较"。给我完整代码，用 scoped 样式。
+:::
+
+---
+
+## E-2 提示框 / Callout {#sec-appE-2 .unnumbered}
+
+**我想实现什么：** 在幻灯片里放一个颜色突出的提示框，吸引注意力。
+
+**简洁写法（蓝色提示）：**
+
+```html
+<div style="background:#e8f4fd;border-left:4px solid #2196F3;padding:0.8em 1em;border-radius:4px;">
+
+💡 这里是提示内容。
+
+</div>
+```
+
+**四种颜色方案，直接复制使用：**
+
+**蓝色（提示/信息）**：
+
+```html
+<div style="background:#e8f4fd;border-left:4px solid #2196F3;padding:0.8em 1em;border-radius:4px;margin:0.5em 0;">
+
+💡 **提示：** 内容写在这里。
+
+</div>
+```
+
+**黄色（警告/注意）**：
+
+```html
+<div style="background:#fff8e1;border-left:4px solid #FFC107;padding:0.8em 1em;border-radius:4px;margin:0.5em 0;">
+
+⚠️ **注意：** 内容写在这里。
+
+</div>
+```
+
+**绿色（正确/推荐）**：
+
+```html
+<div style="background:#e8f5e9;border-left:4px solid #4CAF50;padding:0.8em 1em;border-radius:4px;margin:0.5em 0;">
+
+✅ **做法：** 内容写在这里。
+
+</div>
+```
+
+**红色（错误/危险）**：
+
+```html
+<div style="background:#fce4ec;border-left:4px solid #f44336;padding:0.8em 1em;border-radius:4px;margin:0.5em 0;">
+
+❌ **错误：** 内容写在这里。
+
+</div>
+```
+
+**推荐写法（定义成 CSS class，复用更方便）：**
+
+在全局 `<style>` 里加：
+
+```html
+<style>
+.box-note  { background:#e8f4fd; border-left:4px solid #2196F3; padding:0.8em 1em; border-radius:4px; margin:0.5em 0; }
+.box-warn  { background:#fff8e1; border-left:4px solid #FFC107; padding:0.8em 1em; border-radius:4px; margin:0.5em 0; }
+.box-tip   { background:#e8f5e9; border-left:4px solid #4CAF50; padding:0.8em 1em; border-radius:4px; margin:0.5em 0; }
+.box-error { background:#fce4ec; border-left:4px solid #f44336; padding:0.8em 1em; border-radius:4px; margin:0.5em 0; }
+</style>
+```
+
+然后使用：
+
+```html
+<div class="box-note">
+
+💡 **提示：** 这是一条有用的信息。
+
+</div>
+```
+
+::: {.callout-tip}
+### 提示词
+
+我想在 Marp 幻灯片里使用提示框，需要四种颜色：蓝色（提示）、黄色（警告）、绿色（推荐）、红色（错误）。请帮我生成全局 CSS class 定义（放在 `<style>` 块里），以及每种框的使用示例。
+:::
+
+---
+
+## E-3 小字备注区域 {#sec-appE-3 .unnumbered}
+
+**我想实现什么：** 在幻灯片底部放一块小字的数据来源或参考文献区域。
+
+**简洁写法：**
+
+```html
+<div style="font-size:14px;color:#888;margin-top:1em;border-top:1px solid #ddd;padding-top:0.4em;">
+注：数据来源……
+</div>
+```
+
+**推荐写法（贴在底部）：**
+
+先在全局 `<style>` 里加：
+
+```html
+<style>
+section {
+  display: flex;
+  flex-direction: column;
+}
+.note {
+  font-size: 14px;
+  color: #888;
+  margin-top: auto;
+  padding-top: 0.5em;
+  border-top: 1px solid #e0e0e0;
+}
+</style>
+```
+
+使用时：
+
+```markdown
+## 图表标题
+
+主要内容……
+
+![width:70%](./Fig/chart.png)
+
+<div class="note">
+注：数据来源于国家统计局（2023）。单位：亿元。
+</div>
+```
+
+::: {.callout-tip}
+### 提示词
+
+帮我在 Marp 幻灯片里实现底部小字备注，要求备注始终贴在幻灯片最底部，字号 13px，颜色 #999，上方有一条浅灰色分割线。给我完整的 CSS 和使用示例。
+:::
+
+---
+
+## E-4 制作封面页 {#sec-appE-4 .unnumbered}
+
+**我想实现什么：** 做一张好看的封面页，和正文页风格有所区分。
+
+**最简单写法（用 `_class` 区分）：**
+
+先定义一个封面样式，在全局 `<style>` 里加：
+
+```html
+<style>
+section.cover {
+  background: #1a237e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+section.cover h1 {
+  font-size: 48px;
+  color: white;
+  border: none;
+}
+section.cover p {
+  font-size: 22px;
+  color: #c5cae9;
+}
+</style>
+```
+
+然后在封面页用 `<!-- _class: cover -->`：
+
+```markdown
+<!-- _class: cover -->
+<!-- _paginate: false -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+# 计量经济学导论
+
+2024 年秋季学期
+
+张三 | 某某大学
+```
+
+**用背景图做封面：**
+
+```markdown
+<!-- _paginate: false -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+![bg opacity:0.15](./Fig/cover-bg.jpg)
+
+# 课程标题
+
+副标题 | 2024年
+```
+
+**推荐写法：** 结合背景色和简单排版，不需要复杂设计：
+
+```markdown
+---
+marp: true
+theme: default
+---
+
+<style>
+section.cover {
+  background: linear-gradient(135deg, #1565c0, #283593);
+  color: white;
+}
+section.cover h1 { color: white; font-size: 44px; margin-bottom: 0.3em; }
+section.cover h2 { color: #90caf9; font-size: 24px; font-weight: normal; border: none; }
+section.cover p  { color: #bbdefb; font-size: 18px; }
+</style>
+
+<!-- _class: cover -->
+<!-- _paginate: false -->
+
+# 实证研究方法
+
+## Empirical Research Methods
+
+2024 年秋季 | 某某大学经济学院
+```
+
+::: {.callout-tip}
+### 提示词
+
+帮我生成一张 Marp 封面页，要求：深蓝色渐变背景（从 #1565c0 到 #283593），标题白色大字，副标题浅蓝色，不显示页码和页眉页脚，用 `_class: cover` 实现。给我完整的 CSS 和封面页代码。
+:::

@@ -1,0 +1,228 @@
+# 附录 A：我想调整文字效果 {#sec-appA .unnumbered}
+
+这里收录了所有与文字相关的常见需求。每个条目的结构是：我想实现什么 → 最小写法 → 推荐写法 → 常见问题 → 提示词。
+
+---
+
+## A-1 调整全局正文字号 {#sec-appA-1 .unnumbered}
+
+**我想实现什么：** 让整份幻灯片的正文字更大或更小。
+
+**最小写法：**
+
+```html
+<style>
+section {
+  font-size: 22px;
+}
+</style>
+```
+
+**推荐写法：** 把 `<style>` 块放在 YAML 头之后、第一张幻灯片之前：
+
+```markdown
+---
+marp: true
+theme: default
+---
+
+<style>
+section {
+  font-size: 22px;
+}
+</style>
+
+# 第一张幻灯片
+
+正文字号现在是 22px。
+```
+
+**常见问题：**
+
+- 改了没有反应 → 检查 `<style>` 是否在 YAML 头外面（不是在 `---` 里面）
+- 想只改某一张 → 用 `<style scoped>` 代替 `<style>`
+
+**提示词：**
+
+> 帮我在 Marp 幻灯片中把全局正文字号改为 22px，h1 改为 38px，h2 改为 30px。当前没有 `<style>` 块。只返回需要加入的 `<style>` 块代码。
+
+---
+
+## A-2 调整标题字号 {#sec-appA-2 .unnumbered}
+
+**我想实现什么：** 单独调整 `#`（h1）或 `##`（h2）的字号，而不影响正文。
+
+**最小写法：**
+
+```html
+<style>
+h1 { font-size: 40px; }
+h2 { font-size: 32px; }
+</style>
+```
+
+**推荐写法：** 通常和正文字号一起设定：
+
+```html
+<style>
+section { font-size: 24px; }
+h1 { font-size: 40px; }
+h2 { font-size: 32px; }
+h3 { font-size: 26px; }
+</style>
+```
+
+**常见问题：**
+
+- `h1` 和 `h2` 颜色也想改 → 在同一条规则里加 `color: #333;`
+- 默认主题的 `h1` 很大，如果不主动设置，`gaia` 和 `uncover` 主题会各有默认值
+
+**提示词：**
+
+> 我的 Marp 幻灯片用 default 主题，请帮我生成一个 `<style>` 块，把 h1 字号设为 38px 颜色 #1a1a2e，h2 字号设为 30px 颜色 #333，正文 24px。只返回 `<style>` 块。
+
+---
+
+## A-3 小字号注释 {#sec-appA-3 .unnumbered}
+
+**我想实现什么：** 在幻灯片底部放一行小字（数据来源、参考文献等）。
+
+**最小写法：**
+
+```html
+<small>注：数据来源……</small>
+```
+
+**推荐写法：** 加边框线和颜色，更清晰：
+
+```html
+<div style="font-size:14px; color:#888; border-top:1px solid #ddd; margin-top:auto; padding-top:0.5em;">
+
+注：数据来源于《中国统计年鉴》（2023年）。
+
+</div>
+```
+
+**如果经常用，定义一个 class 更方便：**
+
+先在全局 `<style>` 里加：
+
+```html
+<style>
+.note {
+  font-size: 14px;
+  color: #888;
+  border-top: 1px solid #ddd;
+  margin-top: auto;
+  padding-top: 0.5em;
+}
+</style>
+```
+
+然后每次这样用：
+
+```html
+<div class="note">注：数据来源……</div>
+```
+
+**常见问题：**
+
+- 注释不在底部 → 给外层 `section` 加 `display: flex; flex-direction: column;`，然后用 `margin-top: auto` 把注释推到底部
+- 字太小看不清 → 改为 `16px`
+
+**提示词：**
+
+> 帮我在 Marp 幻灯片里实现一个底部小字注释样式，要求：字号 14px，颜色灰色，上方有一条细分隔线，注释始终贴在幻灯片底部。请给我完整的 CSS class 定义和使用示例。
+
+---
+
+## A-4 修改页码样式 {#sec-appA-4 .unnumbered}
+
+**我想实现什么：** 改变页码的位置、字号或格式（比如显示"3 / 12"）。
+
+**最小写法（开启页码）：**
+
+```yaml
+---
+marp: true
+paginate: true
+---
+```
+
+**显示"当前页 / 总页数"格式：**
+
+在某一张幻灯片开头加（对那一页生效）：
+
+```markdown
+<!-- _paginate: "### %page / %total" -->
+```
+
+**用 CSS 修改页码位置和字号：**
+
+```html
+<style>
+section::after {
+  font-size: 16px;
+  color: #666;
+  content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+}
+</style>
+```
+
+**隐藏某一页的页码：**
+
+```markdown
+<!-- _paginate: false -->
+```
+
+**提示词：**
+
+> 我的 Marp 幻灯片用 `paginate: true`，请帮我用 CSS 把页码改为"当前页 / 总页数"格式，字号 14px，颜色 #999，显示在右下角。只返回 `<style>` 块。
+
+---
+
+## A-5 修改页眉页脚内容与样式 {#sec-appA-5 .unnumbered}
+
+**我想实现什么：** 设置页眉页脚，或者改变它们的字体大小和颜色。
+
+**最小写法：**
+
+```yaml
+---
+marp: true
+header: "标题"
+footer: "姓名 | 日期"
+---
+```
+
+**修改样式（字号、颜色）：**
+
+```html
+<style>
+header {
+  font-size: 16px;
+  color: #888;
+}
+footer {
+  font-size: 14px;
+  color: #aaa;
+}
+</style>
+```
+
+**某一页单独关闭：**
+
+```markdown
+<!-- _header: "" -->
+<!-- _footer: "" -->
+```
+
+**某一页单独修改内容：**
+
+```markdown
+<!-- _header: "第二章：方法论" -->
+```
+
+**提示词：**
+
+> 我的 Marp 幻灯片设置了 header 和 footer，请帮我用 CSS 把页眉字号改为 16px 颜色 #666，页脚字号 13px 颜色 #aaa，并在页脚左侧显示内容。只返回 `<style>` 块。

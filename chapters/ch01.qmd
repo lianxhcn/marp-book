@@ -1,0 +1,246 @@
+# 第一份 Marp 幻灯片 {#sec-ch01}
+
+这一章只有一个目标：**让你看到自己做出的第一张幻灯片。**
+
+我们不会讲太多原理，等你真的跑起来之后，再慢慢解释。
+
+## Marp 是什么？
+
+Marp 是一个工具，让你用 [Markdown](../appendix/appI.qmd) 写幻灯片。
+
+你只需要写普通的文字和简单的符号，它会自动帮你排成一张张幻灯片。和 PowerPoint 最大的不同是：你不需要用鼠标拖来拖去，只需要专注于内容本身。
+
+一个最简单的 Marp 文件长这样：
+
+```markdown
+---
+marp: true
+---
+
+# 我的第一张幻灯片
+
+这是第一张的内容。
+
+---
+
+# 第二张幻灯片
+
+- 第一点
+- 第二点
+```
+
+就这些。三行 YAML 头，加上几行 Markdown，就是一份幻灯片。
+
+## Marp 是 AI 时代的幻灯片工具 {#sec-marp-ai-era}
+
+这是一个值得多说几句的问题。
+
+PowerPoint 是"所见即所得"的工具——格式和内容是混在一起的：你需要一边想内容，一边操心字号、对齐、颜色、间距……每次改动都要动手调整，费时费力。
+
+Marp 把这两件事彻底分开：**内容用 Markdown 写，样式用 YAML 和 CSS 控制。** 这个特点，在 AI 时代变得格外有价值。
+
+**AI 可以直接帮你生成 Marp 幻灯片。** 因为 Marp 文件本质上是纯文本（Markdown + YAML），AI 可以轻松读懂和生成。你可以：
+
+- 把一篇论文或报告发给 AI，让它**直接输出一份 Marp 幻灯片**
+- 把一个模板发给 AI，让它**按模板风格填充内容**
+- 告诉 AI"这份幻灯片要讲给本科生听，8 页以内"，AI 能直接给你适合的版本
+
+相比之下，用 AI 生成 PowerPoint 要困难得多——AI 不擅长控制 PPT 里的像素位置和图形布局，而 Marp 的纯文本格式正是 AI 最擅长处理的。
+
+**一个典型的 AI 协作工作流：**
+
+```
+有一篇论文/报告/调研结果
+        ↓
+发给 AI，附上一个 Marp 模板
+        ↓
+AI 输出完整的 .md 幻灯片文件
+        ↓
+在 VS Code 里预览、微调
+        ↓
+导出 PDF，完成
+```
+
+这个工作流在[第五章](ch05.qmd)会详细展开。现在你只需要知道：**学会 Marp，就是学会了和 AI 高效协作做幻灯片。**
+
+::: {.callout-note}
+## 不需要从零学所有内容
+
+Marp 有很多参数和 CSS 细节，但你不需要全部记住。只需要：掌握本书前四章的基础内容，有几个顺手的模板，遇到新需求告诉 AI 来解决——这三件事加在一起，就是这本书的全部目标。
+:::
+
+## 安装 VS Code
+
+VS Code 是我们用来编辑和预览 Marp 的编辑器。如果你还没有安装，按下面的步骤来：
+
+1. 打开浏览器，访问 [https://code.visualstudio.com](https://code.visualstudio.com)
+2. 点击页面上的蓝色下载按钮
+3. 下载完成后双击安装包，一路"下一步"即可
+
+::: {.callout-tip}
+## 已经有 VS Code 了？
+
+直接跳到下一节安装插件就好。
+:::
+
+## 安装 Marp 插件
+
+VS Code 装好之后，我们需要安装一个叫 **Marp for VS Code** 的插件。
+
+步骤如下：
+
+1. 打开 VS Code
+2. 点击左侧竖排图标栏里的**扩展图标**（四个小方块组成的图标，或按 `Ctrl+Shift+X` / `Cmd+Shift+X`）
+3. 在搜索框里输入 `Marp`
+4. 找到 **"Marp for VS Code"**（作者是 marp-team），点击 **Install**
+5. 等几秒钟，装好了
+
+就这么简单。
+
+<img src="https://fig-lianxh.oss-cn-shenzhen.aliyuncs.com/Marp%E5%88%9B%E5%BB%BA%E5%B9%BB%E7%81%AF%E7%89%87_Fig6_%20Marp%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD_%E5%AE%8B%E6%A3%AE%E5%AE%89.png" width="700">
+
+::: {.callout-note}
+## 插件安装好的标志
+
+安装完成后，VS Code 顶部菜单栏会出现一个「两个三角形叠放」的图标。单击这个图标可以实现两个功能：
+
+- 对于普通的 `.md` 文档，`单击 Marp 图标` &rarr; `Toggle Marp Feature……` 后，会自动在该文档顶部插入 YAML 信息：`marp: true`，使该文档变成一个 Marp Slides 文档。
+- 对于已经包含 `marp: ture` 的文档，点击 `Export Slide Deck……` 可以将 Marp 文档导出为 PDF，HTML 等格式。
+
+<img src="https://fig-lianxh.oss-cn-shenzhen.aliyuncs.com/20260320213614.png" width="700">
+:::
+
+## 新建第一个 .md 文件
+
+现在我们来新建一个文件：
+
+1. 在 VS Code 里，点击菜单 **File → New File**（或按 `Ctrl+N` / `Cmd+N`）
+2. 在弹出的对话框里，输入文件名 `slides.md`，选择一个你想保存的位置
+3. 点击 Create
+
+或者更简单：
+
+1. 在桌面或某个文件夹里新建一个文本文件
+2. 把文件扩展名改为 `.md`
+3. 用 VS Code 打开它（右键 → 用 VS Code 打开）
+
+## 输入极简示例，看到第一张幻灯片
+
+文件打开后，把下面这段内容完整复制进去：
+
+```markdown
+---
+marp: true
+---
+
+# 我的第一张幻灯片
+
+这是我用 Marp 做的幻灯片。
+
+---
+
+## 第二张
+
+- 要点一
+- 要点二
+  
+![](./Figs/MarpLogo.png)
+```
+
+复制完，按 `Ctrl+S`（Mac 是 `Cmd+S`）保存文件。
+
+### 点击预览图标
+
+保存之后，注意 VS Code 编辑器右上角——应该出现了一个**小图标**，鼠标悬停上去会显示 `Open Preview to the Side` 或 `Marp: Open Preview` 之类的提示。
+
+如果你的 VS Code 中还安装了 **Markdown Preview Enhanced** 或 **Markdown All in One** 插件，则点击预览图标后，VS Code 的右下角会显示如下信息，点击左侧按钮确认即可看到幻灯片的样子了。
+
+<img src="https://fig-lianxh.oss-cn-shenzhen.aliyuncs.com/20260320212434.png" width="500" alt="20260320212434">
+
+::: {.callout-tip}
+## 图标在哪里？
+
+如果右上角没有看到 Marp 图标，可以试试：
+
+- 确认文件是以 `.md` 为扩展名保存的
+- 确认文件里第一行确实是 `---`，第二行是 `marp: true`
+- 重新打开 VS Code，有时候插件需要重启才生效
+:::
+
+**恭喜！** 如果你看到了右边出现了幻灯片预览，你已经成功了。
+
+## 关于 `marp: true`
+
+文件开头的这三行是"YAML 头"，用来告诉 Marp 插件"这是一份 Marp 幻灯片"：
+
+```yaml
+---
+marp: true
+---
+```
+
+这三行**必须放在文件的最开头**，一个字符都不能差。之后所有的 Marp 设定都会写在这里（在两个 `---` 之间）。
+
+## 用 `---` 分页
+
+在 Marp 里，用三个连字符 `---` 来分隔幻灯片页面：
+
+```markdown
+---
+marp: true
+---
+
+# 第一页
+
+第一页的内容
+
+---
+
+# 第二页
+
+第二页的内容
+```
+
+注意：YAML 头里的 `---` 是用来"包住"设定的，不算分页。从 YAML 头结束之后，每次出现 `---` 就是新的一页。
+
+最终的渲染效果如下：
+
+<img src="https://fig-lianxh.oss-cn-shenzhen.aliyuncs.com/20260320215405.png" width="700" alt="20260320215405">
+
+## 导出 PDF 和 HTML
+
+预览满意了，就可以导出了。
+
+### 最简单的导出方式
+
+1. 在 VS Code 里打开你的 `.md` 文件
+2. 按下 `Ctrl+Shift+P`（Mac 是 `Cmd+Shift+P`），打开命令面板
+3. 输入 `Marp`，你会看到几个选项：
+   - **Marp: Export Slide Deck...** — 点这个
+4. 在弹出的保存对话框里，选择保存格式：
+   - 选 `.pdf` 保存为 PDF
+   - 选 `.html` 保存为 HTML
+
+PDF 是最推荐的格式，任何设备都能打开，图片也不会丢。
+
+::: {.callout-note}
+## 第一次导出 PDF 可能需要等一会儿
+
+Marp 导出 PDF 时会在后台调用一个叫 Chromium 的浏览器内核，第一次使用时可能会自动下载，耐心等一下就好。
+:::
+
+---
+
+::: {.chapter-summary}
+**本章小结**
+
+这一章你完成了：
+
+- 安装 VS Code 和 Marp 插件
+- 创建了第一个 `.md` 文件
+- 用 `marp: true` 启用 Marp
+- 用 `---` 分页
+- 预览并导出了幻灯片
+
+下一章，我们来让幻灯片"好看一点"——选主题、加页码、设页眉页脚。
+:::

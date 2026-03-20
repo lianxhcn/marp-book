@@ -1,0 +1,254 @@
+# 附录 D：我想展示代码和结果 {#sec-appD .unnumbered}
+
+---
+
+## D-1 基本代码块（带语法高亮） {#sec-appD-1 .unnumbered}
+
+**我想实现什么：** 在幻灯片里显示带颜色的代码。
+
+**简洁写法：**
+
+````markdown
+```python
+x = [1, 2, 3]
+print(sum(x))
+```
+````
+
+**推荐写法：** 始终在代码块开头注明语言：
+
+| 语言 | 标识 |
+|------|------|
+| Python | `python` |
+| R | `r` |
+| Stata | `stata` |
+| SQL | `sql` |
+| Bash/Shell | `bash` |
+| JavaScript | `javascript` |
+| YAML | `yaml` |
+| Markdown | `markdown` |
+| 纯文本 | `text` 或不写 |
+
+**常见问题：**
+
+- 代码没有颜色 → 检查语言标识是否正确，`Python` 和 `python` 效果一样，但 `py` 不行
+- 代码块太长溢出幻灯片 → 见 [D-5](#sec-appD-5)
+
+---
+
+## D-2 调整代码字号 {#sec-appD-2 .unnumbered}
+
+**我想实现什么：** 代码字号太大或太小，想调整。
+
+**简洁写法（全局）：**
+
+```html
+<style>
+pre, code {
+  font-size: 18px;
+}
+</style>
+```
+
+**只改某一页（scoped）：**
+
+```html
+<style scoped>
+pre, code {
+  font-size: 16px;
+}
+</style>
+```
+
+**常用字号参考：**
+
+| 代码量 | 推荐字号 |
+|--------|---------|
+| 代码少（5行以内） | `20px` ~ `22px` |
+| 代码适中（5-15行） | `17px` ~ `19px` |
+| 代码多（15行以上） | `14px` ~ `16px` |
+
+**提示词：**
+
+> 我的 Marp 幻灯片里代码块字号太大，请帮我把代码块全局字号改为 17px，行间距 1.5，代码块有浅灰色背景 #f5f5f5。只返回 `<style>` 块。
+
+---
+
+## D-3 左代码右输出 {#sec-appD-3 .unnumbered}
+
+**我想实现什么：** 左边显示代码，右边显示运行结果（文字或表格）。
+
+**推荐写法：**
+
+````html
+<style scoped>
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+}
+.cols > div { overflow: hidden; }
+</style>
+
+<div class="cols">
+<div>
+
+**代码**
+
+```python
+import pandas as pd
+df = pd.DataFrame({
+    'x': [1,2,3],
+    'y': [4,5,6]
+})
+print(df)
+```
+
+</div>
+<div>
+
+**输出**
+
+```text
+   x  y
+0  1  4
+1  2  5
+2  3  6
+```
+
+</div>
+</div>
+````
+
+**注意：** `<div>` 标签和 Markdown 内容之间必须留空行。
+
+**提示词：**
+
+> 帮我生成一张 Marp 幻灯片，左边是 Python 代码（内容是用 pandas 读取 CSV），右边是对应的输出结果（文字表格形式）。左右各 50%，标题"数据读取示例"。给我完整代码。
+
+---
+
+## D-4 左代码右图片 {#sec-appD-4 .unnumbered}
+
+**我想实现什么：** 左边显示绘图代码，右边显示生成的图片。
+
+**推荐写法：**
+
+````html
+<style scoped>
+.cols {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  gap: 1em;
+  align-items: center;
+}
+</style>
+
+<div class="cols">
+<div>
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 2*np.pi, 100)
+y = np.sin(x)
+
+plt.plot(x, y, color='steelblue')
+plt.xlabel('x')
+plt.ylabel('sin(x)')
+plt.tight_layout()
+plt.savefig('Fig/sinx.png')
+```
+
+</div>
+<div>
+
+![width:100%](./Fig/sinx.png)
+
+</div>
+</div>
+````
+
+**比例建议：**
+
+- 代码短图片重要 → `grid-template-columns: 1fr 1fr`
+- 代码多图片小 → `grid-template-columns: 60% 40%`
+- 代码少图片大 → `grid-template-columns: 40% 60%`
+
+
+::: {.callout-tip}
+### 提示词
+
+帮我生成一张 Marp 幻灯片，左边（55%宽）是 Python 绘图代码，右边（45%宽）是图片（路径 ./Fig/plot.png）垂直居中。标题"可视化结果"，代码字号 16px。只返回这张幻灯片的完整代码。
+:::
+
+---
+
+## D-5 长代码怎么处理 {#sec-appD-5 .unnumbered}
+
+**我想实现什么：** 代码太长，超出幻灯片范围了，怎么办？
+
+**方法一：缩小字号（最简单）**
+
+```html
+<style scoped>
+pre { font-size: 14px; line-height: 1.4; }
+</style>
+```
+
+**方法二：让代码块可以滚动**
+
+```html
+<style scoped>
+pre {
+  font-size: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+</style>
+```
+
+这样代码块会出现滚动条（在 HTML 预览中有效，PDF 中不支持滚动）。
+
+**方法三：拆成两页（推荐）**
+
+如果代码真的很长，最好拆开，用两页幻灯片来呈现：
+
+````markdown
+## 代码（第一部分）
+
+```python
+# 数据读取和清洗
+import pandas as pd
+df = pd.read_csv("data.csv")
+df = df.dropna()
+```
+
+---
+
+## 代码（第二部分）
+
+```python
+# 回归分析
+from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+model.fit(df[['x']], df['y'])
+```
+````
+
+**方法四：只展示关键部分，用注释省略**
+
+```python
+# 数据准备（省略）...
+
+# 核心代码
+result = model.fit(X, y)
+print(result.summary())
+```
+
+::: {.callout-tip}
+### 提示词
+
+我的 Marp 幻灯片里有一段 20 行的 Python 代码，显示不完整。我希望把这段代码分成两张幻灯片展示，每张最多 10 行，标题分别是"代码（上）"和"代码（下）"。请帮我拆分并生成两张幻灯片的代码。
+:::

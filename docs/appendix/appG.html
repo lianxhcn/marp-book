@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>附录 G：我想让 AI 帮我做 – Marp 幻灯片入门</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../appendix/appI.html" rel="next">
+<link href="../appendix/appF.html" rel="prev">
+<link href="../images/book-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e8fb9d25728d58bfeac61b497e4a6629.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-57a92833092fd6dc0d7710b6bdfff9c5.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7ef202e96c563d31d9e5226e4d6cabf9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-490ba4e843cb1303a232ed0c676384f2.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendix/appA.html">📖 附录：各类提示词</a></li><li class="breadcrumb-item"><a href="../appendix/appG.html">附录 G：我想让 AI 帮我做</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="https://lianxhcn.github.io/marp_book/" class="sidebar-logo-link">
+      <img src="../images/book-logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Marp Book</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/lianxhcn/marp_book" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://www.lianxh.cn" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-home"></i></a>
+    <a href="../Marp-幻灯片入门.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">前言</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">📚 正文</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/ch01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">第一份 Marp 幻灯片</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/ch02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">基础设定</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/ch03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">字号、图片和公式</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/ch04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">图片管理与文件输出</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/ch05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">借助 AI 美化幻灯片</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/ch06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">八个模板</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">📖 附录：各类提示词</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendix/appA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">附录 A：我想调整文字效果</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendix/appB.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">附录 B：我想调整分页方式</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendix/appC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">附录 C：我想插入图片</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendix/appD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">附录 D：我想展示代码和结果</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendix/appE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">附录 E：我想做更好看的版式</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendix/appF.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">附录 F：我想解决导出和分享问题</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendix/appG.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">附录 G：我想让 AI 帮我做</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendix/appI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">附录 I：Markdown 基础语法</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-appG-1" id="toc-sec-appG-1" class="nav-link active" data-scroll-target="#sec-appG-1">G-1 生成基础模板</a></li>
+  <li><a href="#sec-appG-2" id="toc-sec-appG-2" class="nav-link" data-scroll-target="#sec-appG-2">G-2 按已有模板生成完整幻灯片</a></li>
+  <li><a href="#sec-appG-3" id="toc-sec-appG-3" class="nav-link" data-scroll-target="#sec-appG-3">G-3 修改已有模板（保留风格）</a></li>
+  <li><a href="#sec-appG-4" id="toc-sec-appG-4" class="nav-link" data-scroll-target="#sec-appG-4">G-4 生成双栏布局页</a></li>
+  <li><a href="#sec-appG-5" id="toc-sec-appG-5" class="nav-link" data-scroll-target="#sec-appG-5">G-5 调整字号和配色</a></li>
+  <li><a href="#sec-appG-6" id="toc-sec-appG-6" class="nav-link" data-scroll-target="#sec-appG-6">G-6 处理图片排版页</a></li>
+  <li><a href="#sec-appG-7" id="toc-sec-appG-7" class="nav-link" data-scroll-target="#sec-appG-7">G-7 论文精要转幻灯片</a></li>
+  <li><a href="#sec-appG-8" id="toc-sec-appG-8" class="nav-link" data-scroll-target="#sec-appG-8">G-8 遇到报错时如何提问</a></li>
+  <li><a href="#sec-appG-9" id="toc-sec-appG-9" class="nav-link" data-scroll-target="#sec-appG-9">G-9 其他常用提示词</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendix/appA.html">📖 附录：各类提示词</a></li><li class="breadcrumb-item"><a href="../appendix/appG.html">附录 G：我想让 AI 帮我做</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-appG" class="quarto-section-identifier">附录 G：我想让 AI 帮我做</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>这个附录收录了最常用的提示词模板。每个模板都可以直接复制使用，把<strong>方括号里的内容</strong>替换成你的实际情况。</p>
+<p>适用的 AI：豆包、DeepSeek、ChatGPT、Claude 等主流 AI 都可以。</p>
+<hr>
+<section id="sec-appG-1" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-appG-1">G-1 生成基础模板</h2>
+<p><strong>场景：</strong> 我想从零开始，让 AI 帮我生成一份可以直接用的 Marp 模板。</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+提示词
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>请帮我生成一份 Marp 幻灯片的完整基础模板。</p>
+<p>要求：</p>
+<ul>
+<li>主题：default，尺寸：16:9</li>
+<li>开启页码（格式：当前页 / 总页数）</li>
+<li>页眉：[填入课程名或项目名]，页脚：[填入姓名和日期]</li>
+<li>用 headingDivider: 2 自动分页</li>
+<li>全局字号 24px，h1 字号 40px，h2 字号 30px</li>
+<li>包含一个蓝色深色背景的封面页（不显示页码/页眉/页脚）</li>
+<li>封面页后面包含 3 张示例内容页（一张纯文字、一张带代码块、一张双栏）</li>
+</ul>
+<p>只返回完整的 <code>.md</code> 文件内容，用 markdown 代码块包住，不加任何说明文字。</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="sec-appG-2" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-appG-2">G-2 按已有模板生成完整幻灯片</h2>
+<p><strong>场景：</strong> 我有一篇论文或报告，想让 AI 直接输出一份完整的幻灯片，并保持我现有模板的风格。</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+提示词
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>我有一篇论文/报告，内容如下：</p>
+<p>[粘贴论文摘要、引言或完整正文]</p>
+<p>请根据以上内容，生成一份完整的 Marp 幻灯片（<code>.md</code> 格式）。</p>
+<p><strong>风格参考：</strong> 请参照以下模板的 YAML 头和 CSS 样式，保持相同的字号、配色和版式：</p>
+<p>[粘贴模板文件的 YAML 头和 <code>&lt;style&gt;</code> 块]</p>
+<p><strong>其他要求：</strong></p>
+<ul>
+<li>面向受众：[例如：经济学专业研究生]</li>
+<li>幻灯片总页数：[例如：12–15 页]</li>
+<li>包含封面页、目录页、各节内容页、结论页</li>
+<li>每页正文要点控制在 4–5 条以内，不要太满</li>
+<li>只返回完整的 <code>.md</code> 文件内容，用 markdown 代码块包住</li>
+</ul>
+</div>
+</div>
+<hr>
+</section>
+<section id="sec-appG-3" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-appG-3">G-3 修改已有模板（保留风格）</h2>
+<p><strong>场景：</strong> 我有自己的模板，只想加一个新功能，不想改其他的。</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+提示词
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>我有一份 Marp 幻灯片模板，YAML 头和 <code>&lt;style&gt;</code> 块如下：</p>
+<pre><code>[把你的 YAML 头和 &lt;style&gt; 块完整粘贴在这里]</code></pre>
+<p>请在这个基础上帮我添加：[具体描述你想加的功能，例如：</p>
+<ul>
+<li>“一个蓝色提示框的 CSS class（叫 .box-note）”</li>
+<li>“把 h2 标题颜色改为 #1565c0”</li>
+<li>“代码块背景改为浅灰色，字号改为 17px” ]</li>
+</ul>
+<p>要求：</p>
+<ol type="1">
+<li>保留现有 YAML 和 CSS 完全不变</li>
+<li>只在现有 <code>&lt;style&gt;</code> 末尾追加新内容</li>
+<li>返回修改后的完整 YAML 头和 <code>&lt;style&gt;</code> 块</li>
+<li>不需要任何解释</li>
+</ol>
+</div>
+</div>
+<hr>
+</section>
+<section id="sec-appG-4" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-appG-4">G-4 生成双栏布局页</h2>
+<p><strong>场景：</strong> 我需要一张双栏幻灯片，不知道怎么写 CSS Grid。</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+提示词
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>请帮我生成一张 Marp 幻灯片，双栏布局，具体内容如下：</p>
+<ul>
+<li>幻灯片标题：[填入标题]</li>
+<li>左栏内容：[描述左栏内容，例如”OLS 方法的 3 个假设，用要点列表”]</li>
+<li>右栏内容：[描述右栏内容，例如”一张图片，路径 ./Figs/ols.png”]</li>
+<li>左右宽度比：[例如 50:50 或 60:40]</li>
+</ul>
+<p>要求：</p>
+<ul>
+<li>用 <code>&lt;style scoped&gt;</code> 避免影响其他页</li>
+<li><code>&lt;div&gt;</code> 标签和 Markdown 内容之间留空行</li>
+<li>返回从 <code>---</code> 分页符开始到下一个 <code>---</code> 的完整代码</li>
+<li>不加任何解释</li>
+</ul>
+</div>
+</div>
+<hr>
+</section>
+<section id="sec-appG-5" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-appG-5">G-5 调整字号和配色</h2>
+<p><strong>场景：</strong> 我觉得当前幻灯片的字号或颜色不好看，想调整。</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+提示词
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>我的 Marp 幻灯片当前的 <code>&lt;style&gt;</code> 块如下：</p>
+<pre><code>[粘贴现有 &lt;style&gt; 块，或写"暂无 &lt;style&gt; 块"]</code></pre>
+<p>请帮我调整以下样式：</p>
+<ul>
+<li>正文字号：改为 [目标字号，例如 22px]</li>
+<li>h1 字号：改为 [目标字号]，颜色：[目标颜色，例如 #1a237e]</li>
+<li>h2 字号：改为 [目标字号]，颜色：[目标颜色]</li>
+<li>[其他需求，例如”代码块字号 16px，背景色 #f5f5f5”]</li>
+</ul>
+<p>要求：如果已有 <code>&lt;style&gt;</code> 块，只修改相关部分，其余保留。返回完整的修改后 <code>&lt;style&gt;</code> 块，不加解释。</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="sec-appG-6" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-appG-6">G-6 处理图片排版页</h2>
+<p><strong>场景：</strong> 我想让某张幻灯片以某种方式展示图片，不知道怎么排。</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+提示词
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>请帮我生成一张 Marp 幻灯片，要求如下：</p>
+<p>图片展示方式：[选一种描述，例如：</p>
+<ul>
+<li>“一张图片居中，宽度 70%，下方有图片说明”</li>
+<li>“左边是 3 个文字要点，右边是一张图片”</li>
+<li>“上半张是图片，下半张是文字描述”</li>
+<li>“背景是一张低透明度图片，前景是标题和要点” ]</li>
+</ul>
+<p>图片路径：<code>./Figs/[图片文件名]</code><br>
+幻灯片标题：[标题文字]<br>
+文字内容：[要点或描述文字]</p>
+<p>要求：</p>
+<ul>
+<li>用 <code>&lt;style scoped&gt;</code> 隔离样式</li>
+<li>给我从 <code>---</code> 到下一个 <code>---</code> 的完整代码</li>
+<li>不加任何解释</li>
+</ul>
+</div>
+</div>
+<hr>
+</section>
+<section id="sec-appG-7" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-appG-7">G-7 论文精要转幻灯片</h2>
+<p><strong>场景：</strong> 先让 AI 写论文精要，再把精要转成幻灯片——两步走，质量更稳。</p>
+<p><strong>第一步：生成精要</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+提示词（第一步）
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>请阅读以下论文，用中文写一份 800–1000 字的精要，要求：</p>
+<ul>
+<li>包含研究背景、研究问题、数据与方法、核心发现、政策含义</li>
+<li>突出关键数据和因果结论</li>
+<li>语言简洁，适合转化为学术汇报幻灯片</li>
+</ul>
+<p>[粘贴论文全文或摘要+引言+结论]</p>
+</div>
+</div>
+<p><strong>第二步：精要转幻灯片</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+提示词（第二步）
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>以下是一篇论文的精要：</p>
+<p>[粘贴第一步生成的精要]</p>
+<p>请将其转化为一份 Marp 幻灯片（10–12 页），要求：</p>
+<ul>
+<li>参考以下模板风格：[粘贴模板的 YAML 头和 <code>&lt;style&gt;</code> 块]</li>
+<li>面向受众：经济学领域同行</li>
+<li>结构：封面、引言、数据/方法、核心结果（2–3 页）、结论</li>
+<li>结果页保留关键系数和显著性标注（*** ** *）</li>
+<li>只返回 <code>.md</code> 文件，用代码块包住，不加解释</li>
+</ul>
+</div>
+</div>
+<hr>
+</section>
+<section id="sec-appG-8" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-appG-8">G-8 遇到报错时如何提问</h2>
+<p><strong>场景：</strong> 幻灯片排版出问题了（显示不对、图片消失、导出报错等），想让 AI 帮忙排查。</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+提示词
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>我的 Marp 幻灯片出现了问题，描述如下：</p>
+<p><strong>问题现象：</strong> [具体描述，例如：</p>
+<ul>
+<li>“双栏布局中右栏内容跑到左栏下面去了”</li>
+<li>“代码块显示超出幻灯片边界”</li>
+<li>“导出 PDF 时某张幻灯片空白”</li>
+<li>“图片在预览里能看到，导出 PDF 后不见了” ]</li>
+</ul>
+<p><strong>出问题的代码：</strong></p>
+<pre><code>[把出问题的那张幻灯片的完整代码粘贴在这里]</code></pre>
+<p><strong>环境：</strong> VS Code + Marp for VS Code 插件</p>
+<p>请帮我找出原因，并给出修正后的代码。只返回修正后的代码块。</p>
+</div>
+</div>
+<p><strong>常见问题快速定位：</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 41%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>问题</th>
+<th>最可能的原因</th>
+<th>快速提示词</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>双栏布局乱了</td>
+<td><code>&lt;div&gt;</code> 和 Markdown 之间没有空行</td>
+<td>描述给 AI：“div 和内容之间加了空行还是乱”</td>
+</tr>
+<tr class="even">
+<td>图片不显示（预览）</td>
+<td>路径拼写错误或大小写不对</td>
+<td>“图片路径是 ./Figs/xxx.png，这样写对吗”</td>
+</tr>
+<tr class="odd">
+<td>图片不显示（PDF）</td>
+<td>文件夹结构不对</td>
+<td>“slides.md 和 Figs 文件夹的位置关系”</td>
+</tr>
+<tr class="even">
+<td>字号改了没变化</td>
+<td><code>&lt;style&gt;</code> 写在了 YAML 头里面</td>
+<td>“<code>&lt;style&gt;</code> 应该写在 YAML 头的哪里”</td>
+</tr>
+<tr class="odd">
+<td>导出 PDF 超慢</td>
+<td>Chromium 第一次下载</td>
+<td>等待即可，或重启 VS Code</td>
+</tr>
+<tr class="even">
+<td>数学公式不渲染</td>
+<td>忘记加 <code>math: katex</code></td>
+<td>YAML 里加 <code>math: katex</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="sec-appG-9" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-appG-9">G-9 其他常用提示词</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+提示词：生成数学公式页
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>帮我生成一张 Marp 幻灯片，展示以下公式推导：[描述公式内容，例如”OLS 估计量的推导，从最小化残差平方和到求解 β̂”]。要求：用 LaTeX 公式块（<code>$$...$$</code>），每步推导一行，对齐符号使用 <code>aligned</code> 环境。给我完整的幻灯片代码。</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+提示词：生成表格对比页
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>帮我生成一张 Marp 幻灯片，用 Markdown 表格对比以下内容：[描述要对比的内容，例如”OLS、IV、DID 三种方法，对比维度包括：适用条件、核心假设、典型应用”]。表格样式整洁，字号适中。给我完整的幻灯片代码。</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+提示词：生成目录页
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>帮我生成一张 Marp 目录页，包含以下章节：</p>
+<ol type="1">
+<li>[章节一名称]</li>
+<li>[章节二名称]</li>
+<li>[章节三名称]</li>
+<li>[章节四名称]</li>
+</ol>
+<p>要求：编号清晰，当前章节用不同颜色高亮（当前是第 [N] 章）。给我完整的幻灯片代码，用 scoped 样式。</p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/lianxhcn\.github\.io\/marp_book\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../appendix/appF.html" class="pagination-link" aria-label="附录 F：我想解决导出和分享问题">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">附录 F：我想解决导出和分享问题</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../appendix/appI.html" class="pagination-link" aria-label="附录 I：Markdown 基础语法">
+        <span class="nav-page-text">附录 I：Markdown 基础语法</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

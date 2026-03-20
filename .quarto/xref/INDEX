@@ -1,0 +1,50 @@
+{
+  "index.qmd": {
+    "index.html": "6b5a5ddf"
+  },
+  "chapters/ch01.qmd": {
+    "ch01.html": "d7316c5c"
+  },
+  "chapters/ch02.qmd": {
+    "ch02.html": "8cf8f5e4"
+  },
+  "chapters/ch03.qmd": {
+    "ch03.html": "53f218c0"
+  },
+  "chapters/ch04.qmd": {
+    "ch04.html": "d5075b27"
+  },
+  "chapters/ch05.qmd": {
+    "ch05.html": "e6501f84"
+  },
+  "appendix/appA.qmd": {
+    "appA.html": "bf4bee5c"
+  },
+  "appendix/appB.qmd": {
+    "appB.html": "b24e8135"
+  },
+  "appendix/appC.qmd": {
+    "appC.html": "67eef193"
+  },
+  "appendix/appD.qmd": {
+    "appD.html": "e0cc67da"
+  },
+  "appendix/appE.qmd": {
+    "appE.html": "341217d6"
+  },
+  "appendix/appF.qmd": {
+    "appF.html": "d5c12081"
+  },
+  "appendix/appG.qmd": {
+    "appG.html": "d87d2c45"
+  },
+  "appendix/appH.qmd": {
+    "appH.html": "8b41e26d"
+  },
+  "chapters/ch06.qmd": {
+    "ch06.html": "93a0fa40"
+  },
+  "appendix/appI.qmd": {
+    "appI.html": "21cb60e2"
+  }
+}

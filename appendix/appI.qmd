@@ -1,0 +1,198 @@
+# 附录 I：Markdown 基础语法 {#sec-appI .unnumbered}
+
+Marp 使用 Markdown 来写幻灯片内容。Markdown 是一种极简的文本标记语言——你只需要在普通文字里加一些符号，就能表达标题、加粗、列表、代码等格式。
+
+这个附录列出了在 Marp 幻灯片里最常用的 Markdown 语法，方便随时查阅。
+
+---
+
+## 标题 {.unnumbered}
+
+用 `#` 号表示标题，`#` 越多层级越低：
+
+```markdown
+# 一级标题（幻灯片主标题）
+## 二级标题（常用于分节标题）
+### 三级标题（子标题）
+```
+
+在 Marp 里，`#` 和 `##` 是最常用的两级，`###` 偶尔用于小节。
+
+---
+
+## 强调 {.unnumbered}
+
+```markdown
+**加粗文字**
+*斜体文字*
+~~删除线~~
+`行内代码`
+```
+
+渲染效果：**加粗文字**，*斜体文字*，<s>删除线</s>，`行内代码`
+
+---
+
+## 列表 {.unnumbered}
+
+**无序列表**（用 `-` 或 `*`）：
+
+```markdown
+- 要点一
+- 要点二
+  - 子要点（缩进两个空格）
+  - 子要点
+- 要点三
+```
+
+**有序列表**：
+
+```markdown
+1. 第一步
+2. 第二步
+3. 第三步
+```
+
+::: {.callout-tip}
+## Marp 里的列表建议
+
+幻灯片里的列表不要超过 5 条，超过就考虑拆成两页。子要点也尽量少用，层级太深会让幻灯片显得很拥挤。
+:::
+
+---
+
+## 链接与图片 {.unnumbered}
+
+**链接：**
+
+```markdown
+[链接文字](https://example.com)
+```
+
+**图片：**
+
+```markdown
+![图片描述](./Figs/chart.png)
+```
+
+**Marp 专用：图片尺寸控制**
+
+```markdown
+![width:400px](./Figs/chart.png)
+![width:60%](./Figs/chart.png)
+![height:300px](./Figs/chart.png)
+```
+
+---
+
+## 代码 {.unnumbered}
+
+**行内代码**（用反引号包住）：
+
+```markdown
+用 `marp: true` 启用 Marp。
+```
+
+**代码块**（用三个反引号，注明语言）：
+
+````markdown
+```python
+import pandas as pd
+df = pd.read_csv("data.csv")
+```
+````
+
+常用语言标识：`python`、`r`、`stata`、`bash`、`sql`、`yaml`、`markdown`
+
+---
+
+## 引用 {.unnumbered}
+
+```markdown
+> 这是一段引用文字。
+> 可以跨多行。
+```
+
+渲染后会显示为带左侧竖线的缩进段落。
+
+---
+
+## 分隔线 {.unnumbered}
+
+```markdown
+---
+```
+
+在 Marp 里，`---` 用于**分页**（见[第一章](../chapters/ch01.qmd)）。在普通 Markdown 里，它表示水平分隔线。
+
+---
+
+## 表格 {.unnumbered}
+
+```markdown
+| 列一 | 列二 | 列三 |
+|------|------|------|
+| 内容 | 内容 | 内容 |
+| 内容 | 内容 | 内容 |
+```
+
+对齐控制：
+
+```markdown
+| 左对齐 | 居中 | 右对齐 |
+|:-------|:----:|-------:|
+| 内容   |  内容 |   内容 |
+```
+
+---
+
+## 数学公式 {.unnumbered}
+
+Marp 支持 LaTeX 数学公式（需在 YAML 头加 `math: katex`）：
+
+**行内公式**：
+
+```markdown
+质能方程为 $E = mc^2$。
+```
+
+**独立公式块**：
+
+```markdown
+$$
+\hat{\beta} = (X'X)^{-1}X'y
+$$
+```
+
+---
+
+## HTML 标签 {.unnumbered}
+
+Marp 支持在 Markdown 里直接写 HTML，常用于：
+
+```html
+<!-- 图片尺寸（最稳妥的写法） -->
+<img src="./Figs/chart.png" style="width:60%;">
+
+<!-- 文字颜色 -->
+<span style="color:#1565c0;">蓝色文字</span>
+
+<!-- 小字注释 -->
+<small>这是小字</small>
+```
+
+---
+
+## 扩展阅读 {.unnumbered}
+
+如果你想系统学习 Markdown，以下资源值得参考：
+
+- **官方规范**：[CommonMark Spec](https://commonmark.org/)——Markdown 的标准规范，有交互式示例
+- **中文速查表**：[Markdown Guide 中文版](https://www.markdownguide.org/basic-syntax/)——按功能分类，查找方便
+- **Marp 官方文档**：[Marp Core Markdown](https://marpit.marp.app/markdown)——专门介绍 Marp 扩展的 Markdown 语法（图片背景、指令等）
+
+::: {.callout-note}
+## 不需要全部记住
+
+实际写 Marp 幻灯片时，你用到最多的只有：标题（`#` `##`）、加粗（`**`）、列表（`-`）、代码块（` ``` `）和图片（`![]()` 或 `<img>`）。其他语法用到的时候来这里查就好。
+:::

@@ -1,0 +1,56 @@
+/* 整体字体与行距 */
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  line-height: 1.8;
+}
+
+/* 代码块样式 */
+pre.sourceCode {
+  border-left: 4px solid #4a9eda;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  padding: 1em;
+}
+
+/* 提示框 */
+.callout {
+  border-radius: 6px;
+  margin: 1.5em 0;
+}
+
+/* 小字注释 */
+.small-note {
+  font-size: 0.82em;
+  color: #666;
+  border-left: 3px solid #ccc;
+  padding-left: 0.8em;
+  margin-top: 1em;
+}
+
+/* 示例标题 */
+.example-title {
+  font-weight: bold;
+  color: #2c7be5;
+  margin-bottom: 0.3em;
+}
+
+/* 提示词块 */
+.prompt-box {
+  background: #f0f7ff;
+  border: 1px solid #b8d4f0;
+  border-radius: 6px;
+  padding: 1em 1.2em;
+  margin: 1em 0;
+  font-family: monospace;
+  font-size: 0.9em;
+  white-space: pre-wrap;
+}
+
+/* 章节小结 */
+.chapter-summary {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 1em 1.5em;
+  margin-top: 2em;
+  border: 1px solid #dee2e6;
+}
