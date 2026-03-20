@@ -13,18 +13,18 @@ book:
   sidebar:
     title: "Marp Book"
     logo: images/book-logo.png
-    logo-href: https://lianxhcn.github.io/marp_book/
+    logo-href: https://lianxhcn.github.io/marp-book/
     style: floating
     search: true
     background: light
     tools:
       - icon: github
-        href: https://github.com/lianxhcn/marp_book
+        href: https://github.com/lianxhcn/marp-book
       - icon: home
         href: https://www.lianxh.cn
 
   favicon: images/book-logo.png
-  site-url: https://lianxhcn.github.io/marp_book/
+  site-url: https://lianxhcn.github.io/marp-book/
   editor: source
 
   # PDF 下载链接（显示在网站右上角工具栏）
@@ -100,7 +100,7 @@ format:
         % 页脚显示网站地址
         \usepackage{fancyhdr}
         \pagestyle{fancy}
-        \fancyfoot[C]{\small 在线版：\url{https://lianxhcn.github.io/marp_book/}}
+        \fancyfoot[C]{\small 在线版：\url{https://lianxhcn.github.io/marp-book/}}
         \fancyfoot[R]{\thepage}
         \renewcommand{\footrulewidth}{0.4pt}
     toc: true
