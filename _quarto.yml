@@ -82,7 +82,7 @@ format:
     linestretch: 1.2
     code-overflow: wrap
     code-line-numbers: false
-    output-file: "marp-book"
+    output-file: "Marp-book-Lian"
     include-in-header:
       text: |
         \usepackage{ctex}
