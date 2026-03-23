@@ -1,0 +1,405 @@
+# 字号、图片和公式 {#sec-ch03}
+
+这一章解决"我知道能用 Marp，但不知道怎么放图/公式/代码"的问题。
+
+我们不追求面面俱到，只讲最常用的几类。每种都有可以直接复制的最小示例。
+
+## 调整字号
+
+默认的字号有时候太大或太小，我们可以用 CSS 来调整。不用担心，你不需要懂 CSS——直接复制下面的代码就行。
+
+在 Marp 文件里，可以在 YAML 头之后、第一张幻灯片之前加一个 `<style>` 块：
+
+```markdown
+---
+marp: true
+---
+
+<style>
+section {
+  font-size: 24px;
+}
+</style>
+
+# 第一页
+
+正文字号变成 24px 了
+```
+
+### 只调整某一页
+
+如果只想改某一张幻灯片的字号，用 `scoped`：
+
+```markdown
+<style scoped>
+section {
+  font-size: 20px;
+}
+</style>
+
+# 这一页字号更小
+
+其他页不受影响。
+```
+
+### 常用字号参考
+
+| 用途 | 推荐字号 |
+|------|---------|
+| 标准正文 | `24px` 或 `26px` |
+| 内容较多时 | `20px` 或 `22px` |
+| 标题（`h1`） | `40px` 左右（默认较大） |
+| 标题（`h2`） | `34px` 左右 |
+
+调整标题字号的写法：
+
+```html
+<style>
+h1 {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+section {
+  font-size: 22px;
+}
+</style>
+```
+
+::: {.callout-tip}
+## 字号不满意？让 AI 帮你调
+
+直接告诉 AI："我的 Marp 幻灯片正文字号太大，帮我把全局正文改成 22px，标题 h2 改成 30px，返回我需要加的 `<style>` 块。"
+:::
+
+## 数学公式
+
+Marp 支持 LaTeX 数学公式，写法和 Markdown 里一样。
+
+**行内公式**（在文字中间）：
+
+```markdown
+质能方程为 $E = mc^2$，这是物理学的基础。
+```
+
+**独立公式块**：
+
+```markdown
+$$
+\hat{\beta} = (X'X)^{-1}X'y
+$$
+```
+
+**多行公式**：
+
+```markdown
+$$
+\begin{aligned}
+y_i &= \alpha + \beta x_i + \varepsilon_i \\
+\varepsilon_i &\sim N(0, \sigma^2)
+\end{aligned}
+$$
+```
+
+::: {.callout-note}
+## 公式不显示？
+
+在 YAML 头里加上 `math: mathjax` 或 `math: katex`：
+
+```yaml
+---
+marp: true
+math: katex
+---
+```
+
+KaTeX 渲染速度快，推荐用这个。
+:::
+
+## 插入图片
+
+### 基本写法
+
+```markdown
+![图片描述](./Figs/MarpLogo.png)
+```
+
+这里 `./Figs/MarpLogo.png` 是图片的相对路径——意思是"在当前文件夹下的 `Figs` 文件夹里找 `MarpLogo.png`"。图片管理的具体方法在第四章会详细讲。
+
+### 控制图片尺寸
+
+```markdown
+![width:400px](./Figs/MarpLogo.png)
+
+![width:60%](./Figs/MarpLogo.png)
+
+![height:300px](./Figs/MarpLogo.png)
+```
+
+在方括号里加 `width:` 或 `height:` 就能控制大小。
+
+::: {.callout-note}
+### 注意
+
+请不要把 `400px` 简写为 `400`，否则可能无法生效。 
+:::
+
+
+### 图片居中
+
+Marp 的图片默认是左对齐的。要居中，可以用 HTML：
+
+```html
+<div style="text-align: center;">
+
+![width:500px](./Figs/MarpLogo.png)
+
+</div>
+```
+
+或者更简单，用 CSS 全局设置：
+
+```html
+<style>
+img {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+```
+
+### 设置为背景图
+
+```markdown
+![bg](./Figs/MarpLogo.png)
+```
+
+加上 `bg` 关键字，图片就会铺满整张幻灯片作为背景。
+
+在普通页面中，你可以使用如下代码指定图片位于幻灯片右侧，占页面的 40% 篇幅；图片本身的宽度为 400 px。如此以来，左边 60% 的篇幅就可以插入说明文字或代码块。这是实现「图文双栏排版」的一个最简洁的方式。
+
+```markdown
+![bg right:40% w:400px](./Figs/MarpLogo.png)
+
+- text 1
+- text 2
+```
+
+调整背景图透明度：
+
+```markdown
+![bg opacity:0.3](./Figs/MarpLogo.png)
+```
+
+## 代码块
+
+用三个反引号包住代码，并在开头注明语言，就能得到带语法高亮的代码块：
+
+````markdown
+```python
+import pandas as pd
+
+df = pd.read_csv("data.csv")
+print(df.head())
+```
+````
+
+常用语言标识：`python`、`r`、`stata`、`bash`、`sql`、`javascript`、`markdown`
+
+### 调整代码字号
+
+代码默认字号可能偏小，可以这样调：
+
+```html
+<style>
+pre {
+  font-size: 18px;
+}
+</style>
+```
+
+或者只调某一页：
+
+```html
+<style scoped>
+pre {
+  font-size: 16px;
+}
+</style>
+```
+
+## 双栏排版 {#sec-two-col}
+
+双栏是讲义里非常常用的布局，比如"左边代码，右边结果"，或者"左边文字，右边图"。
+
+Marp 用 CSS Grid 实现双栏。直接复制下面的代码：
+
+```html
+<style scoped>
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+</style>
+
+<div class="cols">
+<div>
+
+**左栏内容**
+
+- 要点一
+- 要点二
+
+</div>
+<div>
+
+**右栏内容**
+
+- 要点三
+- 要点四
+
+</div>
+</div>
+```
+
+::: {.callout-important}
+## 注意空行
+
+`<div>` 标签和 Markdown 内容之间必须有空行，否则 Markdown 不会被正确解析。
+:::
+
+### 不等宽双栏
+
+比如左边占 40%，右边占 60%：
+
+```html
+<style scoped>
+.cols {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 1em;
+}
+</style>
+```
+
+改 `grid-template-columns` 里的数字比例就行。
+
+### 左代码右图片
+
+````html
+<style scoped>
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; }
+</style>
+
+<div class="cols">
+<div>
+
+```python
+import matplotlib.pyplot as plt
+x = [1, 2, 3, 4]
+y = [2, 4, 6, 8]
+plt.plot(x, y)
+plt.show()
+```
+
+</div>
+<div>
+
+![width:100%](./Figs/plot.png)
+
+</div>
+</div>
+````
+
+## 小字号注释
+
+幻灯片底部常常需要放一些小字备注，比如数据来源、参考文献。
+
+```html
+<div style="font-size: 14px; color: #888; margin-top: auto; padding-top: 1em; border-top: 1px solid #ddd;">
+
+注：数据来源于《中国统计年鉴》（2023），单位为亿元。
+
+</div>
+```
+
+或者更简单，用一个小 CSS class：
+
+```html
+<style>
+.note {
+  font-size: 14px;
+  color: #888;
+  margin-top: 1em;
+  border-top: 1px solid #eee;
+  padding-top: 0.5em;
+}
+</style>
+
+正文内容……
+
+<div class="note">注：数据来源……</div>
+```
+
+## 提示框（Callout）的简化实现 {#sec-callout}
+
+Marp 没有内置 callout，但用一点 CSS 就能模仿出来。下面给你几个可以直接复制的样式：
+
+### 蓝色提示框（Note）
+
+```html
+<div style="background:#e8f4fd; border-left:4px solid #2196F3; padding:0.8em 1em; border-radius:4px; margin:0.5em 0;">
+
+💡 **提示：** 这里是提示内容，告诉读者一个有用的信息。
+
+</div>
+```
+
+### 黄色警告框（Warning）
+
+```html
+<div style="background:#fff8e1; border-left:4px solid #FFC107; padding:0.8em 1em; border-radius:4px; margin:0.5em 0;">
+
+⚠️ **注意：** 这里是需要注意的内容。
+
+</div>
+```
+
+### 绿色成功框（Tip）
+
+```html
+<div style="background:#e8f5e9; border-left:4px solid #4CAF50; padding:0.8em 1em; border-radius:4px; margin:0.5em 0;">
+
+✅ **做法：** 这里是推荐做法。
+
+</div>
+```
+
+::: {.callout-tip}
+## 嫌麻烦？让 AI 生成
+
+告诉 AI："给我一个 Marp 用的蓝色提示框 HTML 块，内容是'……'，保持简洁，直接返回可复制的代码。"
+
+AI 会帮你生成，你只需要改文字内容就好。
+:::
+
+---
+
+::: {.chapter-summary}
+**本章小结**
+
+这一章你学会了：
+
+- 用 `<style>` 调整字号
+- 写行内公式和独立公式块
+- 插入图片并控制尺寸
+- 写带语法高亮的代码块
+- 用 CSS Grid 实现双栏排版
+- 加小字注释和提示框
+
+这些内容覆盖了日常讲义的绝大多数需求。记不住没关系，用的时候来这里复制就行。
+
+下一章，我们重点解决"图片管理"和"导出输出"这两个新手最容易卡住的问题。
+:::

@@ -13,29 +13,27 @@ book:
   sidebar:
     title: "Marp Book"
     logo: images/book-logo.png
-    logo-href: https://lianxhcn.github.io/marp-book/
+    logo-href: https://lianxhcn.github.io/marp_book/
     style: floating
     search: true
     background: light
     tools:
       - icon: github
-        href: https://github.com/lianxhcn/marp-book
+        href: https://github.com/lianxhcn/marp_book
       - icon: home
         href: https://www.lianxh.cn
 
   favicon: images/book-logo.png
-  site-url: https://lianxhcn.github.io/marp-book/
+  site-url: https://lianxhcn.github.io/marp_book/
   editor: source
-
-  # PDF 下载链接（显示在网站右上角工具栏）
   downloads: [pdf]
 
 #----------------------- Chapters ---------------
   chapters:
-
     - index.qmd
+    - chapters/ch00.qmd
 
-    - part: "📚 正文"
+    - part: "📚 **正文**"
       chapters:
         - chapters/ch01.qmd
         - chapters/ch02.qmd
@@ -44,7 +42,7 @@ book:
         - chapters/ch05.qmd
         - chapters/ch06.qmd
 
-    - part: "📖 附录：各类提示词"
+    - part: "📖 **附录：各类提示词**"
       chapters:
         - appendix/appA.qmd
         - appendix/appB.qmd
@@ -76,17 +74,18 @@ format:
     md-extensions:
       - callout
   pdf:
+    output-file: "Marp-book-Lian"
     documentclass: book
+    classoption: oneside            # 单双页无差异，页边距对称
     papersize: a4
-    fontsize: 11pt
-    linestretch: 1.2
+    fontsize: 10.5pt
+    linestretch: 1.1
     code-overflow: wrap
     code-line-numbers: false
-    output-file: "Marp-book-Lian"
     include-in-header:
       text: |
         \usepackage{ctex}
-        % 用 ulem 替代 soul，支持中文删除线（~~文字~~）
+        % 用 ulem 替代 soul，支持中文删除线
         \usepackage[normalem]{ulem}
         \usepackage{fvextra}
         \DefineVerbatimEnvironment{Highlighting}{Verbatim}{
@@ -97,6 +96,17 @@ format:
           fontsize=\small,
           commandchars=\\\{\}
         }
+        % 缩小左右边距
+        \usepackage{geometry}
+        \geometry{
+          a4paper,
+          left=2.0cm,
+          right=2.0cm,
+          top=2.5cm,
+          bottom=2.5cm
+        }
+        % 章节切换只换页，不强制从奇数页开始
+        \renewcommand{\cleardoublepage}{\clearpage}
         % 页脚显示网站地址
         \usepackage{fancyhdr}
         \pagestyle{fancy}

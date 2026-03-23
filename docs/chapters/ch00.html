@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>D 代码块 – Marp 幻灯片入门</title>
+<title>关于本书 – Marp 幻灯片入门</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../appendix/appE.html" rel="next">
-<link href="../appendix/appC.html" rel="prev">
+<link href="../chapters/ch01.html" rel="next">
+<link href="../index.html" rel="prev">
 <link href="../images/book-logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -119,7 +85,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendix/appA.html">📖 <strong>附录：各类提示词</strong></a></li><li class="breadcrumb-item"><a href="../appendix/appD.html">D 代码块</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/ch00.html">关于本书</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -161,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/ch00.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/ch00.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">关于本书</span></a>
   </div>
 </li>
@@ -241,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendix/appD.html" class="sidebar-item-text sidebar-link active">
+  <a href="../appendix/appD.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">D 代码块</span></a>
   </div>
 </li>
@@ -281,20 +247,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-appD-1" id="toc-sec-appD-1" class="nav-link active" data-scroll-target="#sec-appD-1">D-1 基本代码块（带语法高亮）</a></li>
-  <li><a href="#sec-appD-2" id="toc-sec-appD-2" class="nav-link" data-scroll-target="#sec-appD-2">D-2 调整代码字号</a></li>
-  <li><a href="#sec-appD-3" id="toc-sec-appD-3" class="nav-link" data-scroll-target="#sec-appD-3">D-3 左代码右输出</a></li>
-  <li><a href="#sec-appD-4" id="toc-sec-appD-4" class="nav-link" data-scroll-target="#sec-appD-4">D-4 左代码右图片</a></li>
-  <li><a href="#sec-appD-5" id="toc-sec-appD-5" class="nav-link" data-scroll-target="#sec-appD-5">D-5 长代码怎么处理</a></li>
+  <li><a href="#你能学到什么" id="toc-你能学到什么" class="nav-link active" data-scroll-target="#你能学到什么">你能学到什么？</a></li>
+  <li><a href="#怎么用这本书" id="toc-怎么用这本书" class="nav-link" data-scroll-target="#怎么用这本书">怎么用这本书？</a></li>
+  <li><a href="#这本书是怎么写的" id="toc-这本书是怎么写的" class="nav-link" data-scroll-target="#这本书是怎么写的">这本书是怎么写的？</a></li>
+  <li><a href="#发布自己的在线讲义" id="toc-发布自己的在线讲义" class="nav-link" data-scroll-target="#发布自己的在线讲义">发布自己的在线讲义</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendix/appA.html">📖 <strong>附录：各类提示词</strong></a></li><li class="breadcrumb-item"><a href="../appendix/appD.html">D 代码块</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-appD" class="quarto-section-identifier">D 代码块</span></h1>
+<h1 class="title">关于本书</h1>
 </div>
 
 
@@ -311,275 +276,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<hr>
-<section id="sec-appD-1" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-appD-1">D-1 基本代码块（带语法高亮）</h2>
-<p><strong>我想实现什么：</strong> 在幻灯片里显示带颜色的代码。</p>
-<p><strong>简洁写法：</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sum</span>(x))</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>推荐写法：</strong> 始终在代码块开头注明语言：</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>语言</th>
-<th>标识</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Python</td>
-<td><code>python</code></td>
-</tr>
-<tr class="even">
-<td>R</td>
-<td><code>r</code></td>
-</tr>
-<tr class="odd">
-<td>Stata</td>
-<td><code>stata</code></td>
-</tr>
-<tr class="even">
-<td>SQL</td>
-<td><code>sql</code></td>
-</tr>
-<tr class="odd">
-<td>Bash/Shell</td>
-<td><code>bash</code></td>
-</tr>
-<tr class="even">
-<td>JavaScript</td>
-<td><code>javascript</code></td>
-</tr>
-<tr class="odd">
-<td>YAML</td>
-<td><code>yaml</code></td>
-</tr>
-<tr class="even">
-<td>Markdown</td>
-<td><code>markdown</code></td>
-</tr>
-<tr class="odd">
-<td>纯文本</td>
-<td><code>text</code> 或不写</td>
-</tr>
-</tbody>
-</table>
-<p><strong>常见问题：</strong></p>
+<p><a href="https://lianxhcn.github.io/marp_book/">在线版</a> ｜ <a href="https://lianxhcn.github.io/marp-book/Marp-%E5%B9%BB%E7%81%AF%E7%89%87%E5%85%A5%E9%97%A8.pdf">PDF</a> ｜ <a href="https://github.com/lianxhcn/marp_book">GitHub</a></p>
+<p>大约 6 年前，我偶然发现了 Marp。从那以后，我几乎没有再碰过 PowerPoint。</p>
+<p>用 Marp 是「写」幻灯片 (只需专注于内容即可)；而用 PowerPoint 则是「做」幻灯片 (需要花大量的时间调整格式)。</p>
+<p><img src="https://fig-lianxh.oss-cn-shenzhen.aliyuncs.com/20260320215405.png" class="img-fluid" style="width:90.0%"></p>
+<p> </p>
+<p>随着 AI 的普及，Marp 的优势更加明显：你只需几句简单的提示词就可以把 PDF，Word，Markdown 等文档的内容转换成 Marp 幻灯片。由于 Marp 是采用 Markdown 标记语言来写的，所以无需任何格式方面的设定，直接将 AI 输出文本贴入 VS Code 的 Markdown 编辑器即可渲染为幻灯片。</p>
+<section id="你能学到什么" class="level2">
+<h2 class="anchored" data-anchor-id="你能学到什么">你能学到什么？</h2>
+<p>这本书不是 Marp 技术手册。我不会把所有参数都列出来，也不会讲 CSS 主题开发的原理。相比于连享会此前发布的偏技术性的 <a href="https://www.lianxh.cn/search.html?s=marp">推文</a>，本书的目标在于：<strong>让你尽快上手 Marp，并协助 AI 提示词实现你想要的各种效果。</strong></p>
+<p>具体来说，读完这本书，你应该能够：</p>
 <ul>
-<li>代码没有颜色 → 检查语言标识是否正确，<code>Python</code> 和 <code>python</code> 效果一样，但 <code>py</code> 不行</li>
-<li>代码块太长溢出幻灯片 → 见 <a href="#sec-appD-5">D-5</a></li>
+<li>在 VS Code 里从零做出一份 Marp 幻灯片  <a href="..\docs\chapters\ch01.html">第 1 章</a></li>
+<li>掌握最常用的几个个设定  <a href="..\docs\chapters\ch02.html">第 2 章</a></li>
+<li>知道怎么插图、排版代码、写数学公式  <a href="..\docs\chapters\ch03.html">第 3 章</a> 和 <a href="..\docs\chapters\ch04.html">第 4 章</a></li>
+<li>学会如何借助 AI 工具继续扩展和优化  <a href="..\docs\chapters\ch05.html">第 5 章</a></li>
+</ul>
+<p>最终，你会乐于使用 Marp 制作幻灯片。</p>
+</section>
+<section id="怎么用这本书" class="level2">
+<h2 class="anchored" data-anchor-id="怎么用这本书">怎么用这本书？</h2>
+<p>如果你完全没用过 Marp，请从 <a href="..\docs\chapters\ch01.html">第 1 章</a> 开始读，跟着操作一遍。大概 10 分钟，你就能看到自己做出的第一份幻灯片。</p>
+<p>如果你已经会基本操作，想解决某个具体问题，可以直接跳到 <a href="..\docs\appendix\appA.html">附录</a>，或者在左上角的搜索框中检索关键词。</p>
+</section>
+<section id="这本书是怎么写的" class="level2">
+<h2 class="anchored" data-anchor-id="这本书是怎么写的">这本书是怎么写的？</h2>
+<p>这本书是借助 <a href="https://claude.ai/share/9e3104dc-fbef-4540-90ae-62c0a6a98447">Claude code</a> 生成的，耗时约 10 小时。虽然整体上不错，但难免错漏。欢迎大家提出修改意见和建议。</p>
+<p>你可以点击本书 <a href="https://github.com/lianxhcn/marp_book">GitHub 仓库</a> 上方的 <strong><a href="https://github.com/lianxhcn/marp_book/fork">Fork</a></strong> 按钮，将本仓库复制到你的 GitHub 账号下，然后在你的仓库中进行修改和编辑，最后通过 <strong>Pull Request</strong> 向我提交修改建议。当然，你也可以发邮件给我：<a href="mailto:arlionn@163.com" class="email">arlionn@163.com</a>。</p>
+</section>
+<section id="发布自己的在线讲义" class="level2">
+<h2 class="anchored" data-anchor-id="发布自己的在线讲义">发布自己的在线讲义</h2>
+<p>你也可以修改本仓库的内容，形成符合你个人风格要求的书稿。具体步骤如下 (详情参见：连玉君，2025，<a href="https://lianxhcn.github.io/quarto_book/">Quarto Book</a>)：</p>
+<ul>
+<li><strong>Fork</strong> 在 <a href="https://github.com/lianxhcn/marp_book">GitHub</a> 上 <strong><a href="https://github.com/lianxhcn/marp_book/fork">Fork</a></strong> 本仓库。</li>
+<li><strong>Clone</strong> 在本地使用 <a href="https://desktop.github.com/">Github Desktop</a> (<a href="https://www.lianxh.cn/details/1672.html">教程</a>) 或者 Git 命令将 Fork 后的仓库 clone 到本地，然后在 VS Code 编辑器中修改内容。</li>
+<li><strong>Render</strong>  在 VScode 终端执行 <code>quarto render</code> 命令生成新的网页内容。在此之前，你需要安装 <a href="https://quarto.org/docs/get-started/">Quarto</a>，以及 VScode 的 <a href="https://marketplace.visualstudio.com/items?itemName=quarto.quarto">Quarto 扩展</a>。</li>
+<li><strong>Push</strong> 使用 GitHub Desktop 或 git 命令将修改后的内容 push 到 GitHub 上。</li>
+<li><strong>Publish</strong> 在 GitHub 上打开你的仓库，点击 <code>Settings</code> → <code>Pages</code>，在 <strong>Source</strong> 处选择 <code>main branch</code> - <code>docs</code>，然后点击 <strong>Save</strong>。</li>
+<li>稍等几分钟后，你的在线讲义就会发布成功，网址为 <code>https://你的用户名.github.io/marp-book/</code>。</li>
 </ul>
 <hr>
-</section>
-<section id="sec-appD-2" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-appD-2">D-2 调整代码字号</h2>
-<p><strong>我想实现什么：</strong> 代码字号太大或太小，想调整。</p>
-<p><strong>简洁写法（全局）：</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pre<span class="op">,</span> code {</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>只改某一页（scoped）：</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">style</span><span class="ot"> scoped</span><span class="dt">&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pre<span class="op">,</span> code {</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">16</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>常用字号参考：</strong></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>代码量</th>
-<th>推荐字号</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>代码少（5行以内）</td>
-<td><code>20px</code> ~ <code>22px</code></td>
-</tr>
-<tr class="even">
-<td>代码适中（5-15行）</td>
-<td><code>17px</code> ~ <code>19px</code></td>
-</tr>
-<tr class="odd">
-<td>代码多（15行以上）</td>
-<td><code>14px</code> ~ <code>16px</code></td>
-</tr>
-</tbody>
-</table>
-<p><strong>提示词：</strong></p>
-<blockquote class="blockquote">
-<p>我的 Marp 幻灯片里代码块字号太大，请帮我把代码块全局字号改为 17px，行间距 1.5，代码块有浅灰色背景 #f5f5f5。只返回 <code>&lt;style&gt;</code> 块。</p>
-</blockquote>
+<p>好了，我们开始吧。🎉</p>
 <hr>
-</section>
-<section id="sec-appD-3" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-appD-3">D-3 左代码右输出</h2>
-<p><strong>我想实现什么：</strong> 左边显示代码，右边显示运行结果（文字或表格）。</p>
-<p><strong>推荐写法：</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">style</span><span class="ot"> scoped</span><span class="dt">&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.cols</span> {</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">display</span><span class="ch">:</span> <span class="dv">grid</span><span class="op">;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">grid-template-columns</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">fr</span> <span class="dv">1</span><span class="dt">fr</span><span class="op">;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">gap</span><span class="ch">:</span> <span class="dv">1.5</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">.cols</span> <span class="op">&gt;</span> div { <span class="kw">overflow</span><span class="ch">:</span> <span class="dv">hidden</span><span class="op">;</span> }</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"cols"</span><span class="dt">&gt;</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>**代码**</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>```python</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>import pandas as pd</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>df = pd.DataFrame({</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    'x': [1,2,3],</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    'y': [4,5,6]</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>print(df)</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>```</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>**输出**</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>```text</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>   x  y</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>0  1  4</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>1  2  5</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>2  3  6</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>```</span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>注意：</strong> <code>&lt;div&gt;</code> 标签和 Markdown 内容之间必须留空行。</p>
-<p><strong>提示词：</strong></p>
-<blockquote class="blockquote">
-<p>帮我生成一张 Marp 幻灯片，左边是 Python 代码（内容是用 pandas 读取 CSV），右边是对应的输出结果（文字表格形式）。左右各 50%，标题”数据读取示例”。给我完整代码。</p>
-</blockquote>
-<hr>
-</section>
-<section id="sec-appD-4" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-appD-4">D-4 左代码右图片</h2>
-<p><strong>我想实现什么：</strong> 左边显示绘图代码，右边显示生成的图片。</p>
-<p><strong>推荐写法：</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">style</span><span class="ot"> scoped</span><span class="dt">&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.cols</span> {</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">display</span><span class="ch">:</span> <span class="dv">grid</span><span class="op">;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">grid-template-columns</span><span class="ch">:</span> <span class="dv">55</span><span class="dt">%</span> <span class="dv">45</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">gap</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">align-items</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"cols"</span><span class="dt">&gt;</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>```python</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>import matplotlib.pyplot as plt</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>import numpy as np</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>x = np.linspace(0, 2*np.pi, 100)</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>y = np.sin(x)</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, color='steelblue')</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>plt.xlabel('x')</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>plt.ylabel('sin(x)')</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>plt.savefig('Fig/sinx.png')</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>```</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>![width:100%](./Fig/sinx.png)</span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>比例建议：</strong></p>
-<ul>
-<li>代码短图片重要 → <code>grid-template-columns: 1fr 1fr</code></li>
-<li>代码多图片小 → <code>grid-template-columns: 60% 40%</code></li>
-<li>代码少图片大 → <code>grid-template-columns: 40% 60%</code></li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-提示词
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>帮我生成一张 Marp 幻灯片，左边（55%宽）是 Python 绘图代码，右边（45%宽）是图片（路径 ./Fig/plot.png）垂直居中。标题”可视化结果”，代码字号 16px。只返回这张幻灯片的完整代码。</p>
-</div>
-</div>
-<hr>
-</section>
-<section id="sec-appD-5" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-appD-5">D-5 长代码怎么处理</h2>
-<p><strong>我想实现什么：</strong> 代码太长，超出幻灯片范围了，怎么办？</p>
-<p><strong>方法一：缩小字号（最简单）</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">style</span><span class="ot"> scoped</span><span class="dt">&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>pre { <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">14</span><span class="dt">px</span><span class="op">;</span> <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">1.4</span><span class="op">;</span> }</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>方法二：让代码块可以滚动</strong></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">style</span><span class="ot"> scoped</span><span class="dt">&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>pre {</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">15</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">max-height</span><span class="ch">:</span> <span class="dv">400</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">overflow-y</span><span class="ch">:</span> <span class="bu">auto</span><span class="op">;</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>这样代码块会出现滚动条（在 HTML 预览中有效，PDF 中不支持滚动）。</p>
-<p><strong>方法三：拆成两页（推荐）</strong></p>
-<p>如果代码真的很长，最好拆开，用两页幻灯片来呈现：</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## 代码（第一部分）</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 数据读取和清洗</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data.csv"</span>)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.dropna()</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## 代码（第二部分）</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 回归分析</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>model.fit(df[[<span class="st">'x'</span>]], df[<span class="st">'y'</span>])</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>方法四：只展示关键部分，用注释省略</strong></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 数据准备（省略）...</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 核心代码</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> model.fit(X, y)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-提示词
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>我的 Marp 幻灯片里有一段 20 行的 Python 代码，显示不完整。我希望把这段代码分成两张幻灯片展示，每张最多 10 行，标题分别是”代码（上）“和”代码（下）“。请帮我拆分并生成两张幻灯片的代码。</p>
-</div>
-</div>
+<p>    <a href="https://www.lianxh.cn">主页</a> || <a href="https://www.lianxh.cn/details/17.html">课程</a> || <a href="https://lianxh-class.cn/">视频</a> || <a href="https://www.lianxh.cn/blogs/all.html">推文</a> || <a href="https://www.lianxh.cn/share.html">资料</a></p>
 
 
 </section>
@@ -1153,13 +892,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../appendix/appC.html" class="pagination-link" aria-label="C 插入图片">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">C 插入图片</span>
+      <a href="../index.html" class="pagination-link" aria-label="封面">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">封面</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../appendix/appE.html" class="pagination-link" aria-label="E 版式-双栏排版和提示框">
-        <span class="nav-page-text">E 版式-双栏排版和提示框</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/ch01.html" class="pagination-link" aria-label="第一份 Marp 幻灯片">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">第一份 Marp 幻灯片</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

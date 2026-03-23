@@ -46,5 +46,11 @@
   },
   "appendix/appI.qmd": {
     "appI.html": "21cb60e2"
+  },
+  "chapters/ch00.md": {
+    "ch00.html": "e4517e84"
+  },
+  "chapters/ch00.qmd": {
+    "ch00.html": "4d4caa19"
   }
 }
