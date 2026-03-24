@@ -3,8 +3,8 @@ project:
   output-dir: docs
 
 book:
-  title: "Marp 幻灯片入门"
-  subtitle: "用 VS Code 轻松制作幻灯片"
+  title: "Marp 幻灯片指南"
+  subtitle: "AI + VS Code 轻松制作幻灯片"
   author: "连玉君"
   date: today
   date-format: iso
@@ -13,20 +13,21 @@ book:
   sidebar:
     title: "Marp Book"
     logo: images/book-logo.png
-    logo-href: https://lianxhcn.github.io/marp_book/
+    logo-href: https://lianxhcn.github.io/marp-book/
     style: floating
     search: true
     background: light
     tools:
       - icon: github
-        href: https://github.com/lianxhcn/marp_book
+        href: https://github.com/lianxhcn/marp-book
       - icon: home
         href: https://www.lianxh.cn
 
   favicon: images/book-logo.png
-  site-url: https://lianxhcn.github.io/marp_book/
+  site-url: https://lianxhcn.github.io/marp-book/
   editor: source
   downloads: [pdf]
+  output-file: "Marp-book"
 
 #----------------------- Chapters ---------------
   chapters:
@@ -74,18 +75,22 @@ format:
     md-extensions:
       - callout
   pdf:
-    output-file: "Marp-book-Lian"
+    output-file: "Marp-book"
     documentclass: book
-    classoption: oneside            # 单双页无差异，页边距对称
+    classoption: oneside
     papersize: a4
     fontsize: 10.5pt
     linestretch: 1.1
     code-overflow: wrap
     code-line-numbers: false
+    colorlinks: true
+    linkcolor: blue
+    urlcolor: blue
+    citecolor: blue
     include-in-header:
       text: |
+        \PassOptionsToPackage{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}{hyperref}
         \usepackage{ctex}
-        % 用 ulem 替代 soul，支持中文删除线
         \usepackage[normalem]{ulem}
         \usepackage{fvextra}
         \DefineVerbatimEnvironment{Highlighting}{Verbatim}{
@@ -96,18 +101,15 @@ format:
           fontsize=\small,
           commandchars=\\\{\}
         }
-        % 缩小左右边距
         \usepackage{geometry}
         \geometry{
           a4paper,
-          left=2.0cm,
-          right=2.0cm,
-          top=2.5cm,
-          bottom=2.5cm
+          left=2.5cm,
+          right=2.5cm,
+          top=2.8cm,
+          bottom=2.2cm
         }
-        % 章节切换只换页，不强制从奇数页开始
         \renewcommand{\cleardoublepage}{\clearpage}
-        % 页脚显示网站地址
         \usepackage{fancyhdr}
         \pagestyle{fancy}
         \fancyfoot[C]{\small 在线版：\url{https://lianxhcn.github.io/marp-book/}}

@@ -41,7 +41,7 @@ Marp 幻灯片由三类内容组成：
 检查大纲，按需调整章节结构和详略，然后输入：
 
 > 大纲确认，请输出完整的 Marp 幻灯片 Markdown 文本。  
-> 格式要求参照：<https://lianxhcn.github.io/marp_book/>  
+> 格式要求参照：<https://lianxhcn.github.io/marp-book/>  
 > 模板风格参照 `marp05_paper`，模板内容如下：  
 > [粘贴模板的 YAML 头和 `<style>` 块]
 

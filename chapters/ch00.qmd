@@ -1,6 +1,6 @@
 # 关于本书 {.unnumbered}
 
-[在线版](https://lianxhcn.github.io/marp_book/) ｜ [PDF](https://lianxhcn.github.io/marp-book/Marp-%E5%B9%BB%E7%81%AF%E7%89%87%E5%85%A5%E9%97%A8.pdf) ｜ [GitHub](https://github.com/lianxhcn/marp_book)
+[在线版](https://lianxhcn.github.io/marp-book/) ｜ [PDF](https://lianxhcn.github.io/marp-book/Marp-book.pdf) ｜ [GitHub](https://github.com/lianxhcn/marp-book)
 
 大约 6 年前，我偶然发现了 Marp。从那以后，我几乎没有再碰过 PowerPoint。
 
@@ -35,24 +35,23 @@
 
 这本书是借助 [Claude code](https://claude.ai/share/9e3104dc-fbef-4540-90ae-62c0a6a98447) 生成的，耗时约 10 小时。虽然整体上不错，但难免错漏。欢迎大家提出修改意见和建议。
 
-你可以点击本书 [GitHub 仓库](https://github.com/lianxhcn/marp_book) 上方的 **[Fork](https://github.com/lianxhcn/marp_book/fork)** 按钮，将本仓库复制到你的 GitHub 账号下，然后在你的仓库中进行修改和编辑，最后通过 **Pull Request** 向我提交修改建议。当然，你也可以发邮件给我：<arlionn@163.com>。
+你可以点击本书 [GitHub 仓库](https://github.com/lianxhcn/marp-book) 上方的 **Fork** 按钮，将本仓库复制到你的 GitHub 账号下，然后在你的仓库中进行修改和编辑，最后通过 **Pull Request** 向我提交修改建议。当然，你也可以发邮件给我：<arlionn@163.com>。
 
 ## 发布自己的在线讲义
 
 你也可以修改本仓库的内容，形成符合你个人风格要求的书稿。具体步骤如下 (详情参见：连玉君，2025，[Quarto Book](https://lianxhcn.github.io/quarto_book/))：
 
-- **Fork**&ensp;在 [GitHub](https://github.com/lianxhcn/marp_book) 上 **[Fork](https://github.com/lianxhcn/marp_book/fork)** 本仓库。
+- **Fork**&ensp;在 [GitHub](https://github.com/lianxhcn/marp-book) 上 **Fork** 本仓库。
 - **Clone**&ensp;在本地使用 [Github Desktop](https://desktop.github.com/) ([教程](https://www.lianxh.cn/details/1672.html)) 或者 Git 命令将 Fork 后的仓库 clone 到本地，然后在 VS Code 编辑器中修改内容。
 - **Render**&ensp; 在 VScode 终端执行 `quarto render` 命令生成新的网页内容。在此之前，你需要安装 [Quarto](https://quarto.org/docs/get-started/)，以及 VScode 的 [Quarto 扩展](https://marketplace.visualstudio.com/items?itemName=quarto.quarto)。
 - **Push**&ensp;使用 GitHub Desktop 或 git 命令将修改后的内容 push 到 GitHub 上。
 - **Publish**&ensp;在 GitHub 上打开你的仓库，点击 `Settings` &rarr; `Pages`，在 **Source** 处选择 `main branch` - `docs`，然后点击 **Save**。
 - 稍等几分钟后，你的在线讲义就会发布成功，网址为 `https://你的用户名.github.io/marp-book/`。
 
-
----
+&emsp; 
 
 好了，我们开始吧。🎉
 
----
+![](https://fig-lianxh.oss-cn-shenzhen.aliyuncs.com/Lianxh_装饰黄线.png)
 
-    [主页](https://www.lianxh.cn) \|\| [课程](https://www.lianxh.cn/details/17.html) \|\| [视频](https://lianxh-class.cn/) \|\| [推文](https://www.lianxh.cn/blogs/all.html) \|\| [资料](https://www.lianxh.cn/share.html)
+    [主页](https://www.lianxh.cn) \| [课程](https://www.lianxh.cn/details/17.html) \| [视频](https://lianxh-class.cn/) \| [推文](https://www.lianxh.cn/blogs/all.html) \| [资料](https://www.lianxh.cn/share.html)

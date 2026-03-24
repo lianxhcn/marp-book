@@ -3,7 +3,7 @@
 Guides and tips for making Marp slides.
 
 - [在线阅读](https://lianxhcn.github.io/marp-book/)
-- [PDF 版](https://lianxhcn.github.io/marp-book/Marp-%E5%B9%BB%E7%81%AF%E7%89%87%E5%85%A5%E9%97%A8.pdf)
+- [PDF 版](https://lianxhcn.github.io/marp-book/Marp-book.pdf)
 
 ---
 
