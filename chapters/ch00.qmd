@@ -4,7 +4,8 @@
 
 大约 6 年前，我偶然发现了 Marp。从那以后，我几乎没有再碰过 PowerPoint。
 
-用 Marp 是「写」幻灯片 (只需专注于内容即可)；而用 PowerPoint 则是「做」幻灯片 (需要花大量的时间调整格式)。
+用 Marp 是「写」幻灯片 (只需专注于内容即可)；  
+而用 PowerPoint 则是「做」幻灯片 (需要花大量的时间调整格式)。
 
 ![](https://fig-lianxh.oss-cn-shenzhen.aliyuncs.com/20260320215405.png){width="90%"}
 
@@ -19,7 +20,7 @@
 具体来说，读完这本书，你应该能够：
 
 - 在 VS Code 里从零做出一份 Marp 幻灯片&emsp; [第 1 章](..\docs\chapters\ch01.html)
-- 掌握最常用的几个个设定&emsp; [第 2 章](..\docs\chapters\ch02.html)
+- 掌握最常用的几个设定&emsp; [第 2 章](..\docs\chapters\ch02.html)
 - 知道怎么插图、排版代码、写数学公式&emsp; [第 3 章](..\docs\chapters\ch03.html) 和 [第 4 章](..\docs\chapters\ch04.html)
 - 学会如何借助 AI 工具继续扩展和优化&emsp; [第 5 章](..\docs\chapters\ch05.html)
 
